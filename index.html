@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <!------------- BASIC -------------->
+    <meta charset="UTF-8">
+    <title>Facebook Likes Counter</title>
+    <meta name="description" content="">
+    <meta name="author" content="Bartłomiej Walasik">
+
+    <!------------- MOBILE -------------->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!------------- FONT -------------->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i&amp;subset=latin-ext" rel="stylesheet">
+
+
+    <!------------- BOOSTRAP -------------->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+    <!------------- JQUERY -------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        html {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        span[class^="fb-num-"] {
+            color: #FFF !important;
+            margin: 0 18px 0px 0px;
+            text-shadow: 4px 2px 5px #000f;
+            font-size: 2.5em;
+            background: url('img/02.png');
+        }
+        
+        .fb-c {
+            background-color: #eceef5;
+            box-sizing: border-box;
+            padding: 15px;
+            border: 3px solid #ced7e9;
+            border-radius: 5px;
+        }
+        
+        .fb-num {
+            display: flex;
+            align-items: flex-end;
+            background: url("./img/02.png") 50% 50%;
+        }
+        
+        .fb-c-num {
+            color: #fff;
+            position: relative;
+            bottom: 15%;
+        }
+
+    </style>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="xs-12 sm-12 md-12 lg-12 xl-12">
+                <div class="fb-c">
+                    <div class="row" style="padding:15px;">
+                        <div class="col-xs-3">
+                            <img src="./img/01.png" alt="">
+                        </div>
+
+                        <div class="col-xs-8 fb-num">
+
+                            <span class="fb-c-num">
+                            
+
+                            </span>
+                        </div>
+                        <div class="col-xs-1">
+                            <img src="./img/03.png" alt="">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script>
+        // Change these token to your token,
+        // pageId is your page(use fb id from web)
+        var token = 'YOUR_ACCESS_TOKEN';
+        var pageId = 'YOUR_PAGE_ID';
+
+        // Function will get the fb likes 
+        $(document).ready(() => {
+            fbCount();
+            setInterval(fbCount, 3000);
+        });
+
+
+        var fbCount = () => {
+            $.ajax({
+                url: `https://graph.facebook.com/${pageId}/?fields=fan_count&access_token=${token}`,
+                dataType: 'json',
+                success: (data, status) => {
+                    $(".fb-c-num").text(data.fan_count);
+
+                },
+                error: (data) => {
+                    $('.fb-c-num').html("This page doesn't exist or your data are wrong :P");
+                }
+            });
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
