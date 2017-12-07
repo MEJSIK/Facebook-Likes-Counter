@@ -13,12 +13,9 @@ There are 2 variables which contains <b>YOUR PAGE ID</b> and <b>YOUR ACCESS TOKE
         
         
 </br>        
-If you want to get <b>YOUR_ACCESS_TOKEN</b> you must:
+<p>If you want to get <b>YOUR_ACCESS_TOKEN</b> you must:</br>
   1) Create your app ( It's preety easy).</br>
-      a) Get to: https://developers.facebook.com/ </br>b) Click "MyApps" in the top right corner =>  "Add a New App"
-     
-  2) Display Name is your app name ex. "My Access Token". 2nd field is your e-mail.
-  3) Now go to your app settings and you will see your <b>"App ID"</b> and <b>"App Secret"</b>. Just copy and paste it to the script:
+      a) Get to: https://developers.facebook.com/ </br>b) Click "MyApps" in the top right corner =>  "Add a New App".</br>2) Display Name is your app name ex. "My Access Token". 2nd field is your e-mail.</br>3) Now go to your app settings and you will see your <b>"App ID"</b> and <b>"App Secret"</b>. Just copy and paste it to the script:</p>
     
             var token = '{AppID}|{AppSecret}';
            
