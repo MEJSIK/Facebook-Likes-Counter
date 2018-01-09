@@ -2,7 +2,7 @@
 Plugin shows dynamically your facebook page likes. I used jQuery to do this.
 
 <b>IMAGE:</b></br>
-<img src="http://s6931.chomikuj.pl/ChomikImage.aspx?e=ELZBezrb9C25TdZ1tp8S81eSOfitWy8oD5esyE-6jKb-hyy6xEjeytljjTDjnqVTlfIy3Q7ci-diyiGzHnXayv9gMWJGtNgcyaaZ52aL6Wc&pv=2" />
+<img src="https://github.com/MEJSIK/Facebook-Likes-Counter/blob/master/demo.jpg" />
 
 
 There are 2 variables which contains <b>YOUR PAGE ID</b> and <b>YOUR ACCESS TOKEN</b>:
